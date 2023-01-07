@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:id="@+id/parent">
+    android:id="@+id/parent"
+    android:padding="10dp" >
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton"
@@ -19,7 +20,7 @@
         android:backgroundTint="@color/orange"
         app:backgroundTint="@color/white"
         app:rippleColor="@color/white"/>
-
++
 
 
     <Button
@@ -66,5 +67,10 @@
 
 
     </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contactsRecView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.example.matdesign;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private RecyclerView contactsRecView;
     private MaterialCardView cardView;
     private RelativeLayout parent;
     private FloatingActionButton fab;
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        contactsRecView = findViewById(R.id.contactsRecView);
 
         cardView = findViewById(R.id.cardView);
 
