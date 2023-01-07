@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">MatDesign</string>
-    <string name="click_me">Click Me!</string>
+    <string name="show_snack">Show Snackbar</string>
 </resources>

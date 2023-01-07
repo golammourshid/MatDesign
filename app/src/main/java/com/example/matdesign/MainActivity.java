@@ -2,29 +2,35 @@ package com.example.matdesign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private RelativeLayout parent;
     private FloatingActionButton fab;
-    private Button clkButton;
+    private Button snackButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        clkButton = findViewById(R.id.clickButton);
+        parent = findViewById(R.id.parent);
 
-        clkButton.setOnClickListener(new View.OnClickListener() {
+        snackButton = findViewById(R.id.snackButton);
+
+        snackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Button Clicked!", Toast.LENGTH_SHORT).show();
+                showSnackbar();
             }
         });
 
@@ -37,5 +43,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void showSnackbar() {
+        Snackbar.make(parent, "This is a snackbar", Snackbar.LENGTH_INDEFINITE)
+                .setAction("Retry", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MainActivity.this, "Retry Clicked!", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setActionTextColor(getColor(R.color.orange))
+                .setTextColor(Color.RED)
+                .show();
     }
 }
