@@ -9,11 +9,13 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MaterialCardView cardView;
     private RelativeLayout parent;
     private FloatingActionButton fab;
     private Button snackButton;
@@ -22,6 +24,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        cardView = findViewById(R.id.cardView);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Card Clicked!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         parent = findViewById(R.id.parent);
 
@@ -41,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Fab Clicked!", Toast.LENGTH_SHORT).show();
             }
         });
-
 
     }
 
