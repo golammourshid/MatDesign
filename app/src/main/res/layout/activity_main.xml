@@ -25,6 +25,7 @@
 
     <Button
         android:id="@+id/snackButton"
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
@@ -32,6 +33,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
+        android:visibility="gone"
         android:layout_width="150dp"
         android:layout_height="200dp"
         android:layout_below="@+id/snackButton"
@@ -70,7 +72,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/contactsRecView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

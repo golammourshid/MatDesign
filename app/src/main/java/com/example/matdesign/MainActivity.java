@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
         contactsRecView = findViewById(R.id.contactsRecView);
 
         ArrayList<Contact> contacts = new ArrayList<>();
-        contacts.add(new Contact("Antor", "golammourshid100@gmail.com", "https://www.educba.com/soap-vs-wsdl/"));
-        contacts.add(new Contact("Kamal", "kamalparvez@gmail.com", "https://www.geeksforgeeks.org/wsdl-full-form/"));
-        contacts.add(new Contact("Touhid", "touhid@gmail.com", "https://en.wikipedia.org/wiki/Image#/media/File:Image_created_with_a_mobile_phone.png"));
+        contacts.add(new Contact("Antor", "golammourshid@gmail.com", "https://static.toiimg.com/thumb/msid-58475411,width-748,height-499,resizemode=4,imgsize-142947/.jpg"));
+        contacts.add(new Contact("Kamal", "kamalparvez@gmail.com", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"));
+        contacts.add(new Contact("Touhid", "touhid@gmail.com", "https://cdn.pixabay.com/photo/2013/07/25/12/06/bridge-167041__340.jpg"));
 
         ContactsRecViewAdapter adapter = new ContactsRecViewAdapter(this);
         adapter.setContacts(contacts);
