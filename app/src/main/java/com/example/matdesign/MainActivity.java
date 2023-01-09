@@ -1,15 +1,18 @@
 package com.example.matdesign;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.card.MaterialCardView;
@@ -20,6 +23,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView txtWorld;
     private RecyclerView contactsRecView;
     private MaterialCardView cardView;
     private RelativeLayout parent;
@@ -30,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        txtWorld = findViewById(R.id.txtWorld);
 
         contactsRecView = findViewById(R.id.contactsRecView);
 
@@ -59,9 +65,13 @@ public class MainActivity extends AppCompatActivity {
 
         snackButton = findViewById(R.id.snackButton);
 
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.energy_spike);
+
         snackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                txtWorld.setTypeface(typeface);
                 showSnackbar();
             }
         });

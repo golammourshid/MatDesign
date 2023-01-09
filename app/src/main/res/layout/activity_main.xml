@@ -25,17 +25,18 @@
 
     <Button
         android:id="@+id/snackButton"
-        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:fontFamily="@font/lobster_two"
+        android:textStyle="bold"
         android:text="@string/show_snack" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cardView"
-        android:visibility="gone"
         android:layout_width="150dp"
         android:layout_height="200dp"
+        android:visibility="gone"
         android:layout_below="@+id/snackButton"
         android:layout_centerInParent="true"
         android:layout_marginTop="80dp"
@@ -75,5 +76,15 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/txtWorld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/snackButton"
+        android:text="Hello world"
+        android:layout_centerHorizontal="true"/>
+
+
 
 </RelativeLayout>
