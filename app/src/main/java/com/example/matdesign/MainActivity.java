@@ -1,6 +1,8 @@
 package com.example.matdesign;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
@@ -13,6 +15,8 @@ import android.widget.Toast;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +32,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         contactsRecView = findViewById(R.id.contactsRecView);
+
+        ArrayList<Contact> contacts = new ArrayList<>();
+        contacts.add(new Contact("Antor", "golammourshid100@gmail.com", "https://www.educba.com/soap-vs-wsdl/"));
+        contacts.add(new Contact("Kamal", "kamalparvez@gmail.com", "https://www.geeksforgeeks.org/wsdl-full-form/"));
+        contacts.add(new Contact("Touhid", "touhid@gmail.com", "https://en.wikipedia.org/wiki/Image#/media/File:Image_created_with_a_mobile_phone.png"));
+
+        ContactsRecViewAdapter adapter = new ContactsRecViewAdapter(this);
+        adapter.setContacts(contacts);
+
+        contactsRecView.setAdapter(adapter);
+//        contactsRecView.setLayoutManager(new LinearLayoutManager(this));
+//        contactsRecView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        contactsRecView.setLayoutManager(new GridLayoutManager(this, 2));
 
         cardView = findViewById(R.id.cardView);
 
